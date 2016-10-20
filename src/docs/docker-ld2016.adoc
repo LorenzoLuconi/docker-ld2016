@@ -20,30 +20,32 @@ An Open Platform to Build, Ship, and Run Distributed Applications.
 
 == Container != VM
 
-* http://imesh.github.io/images/contvsvm.png
+image::contvsvm.png[]
 
 == Il mondo dei container senza Docker
 
-[%step]
-* Non esisteva un formato standard per scambiarsi container
-* I container erano difficili da utilizzare
-* Non c'erano tools, api o qualsiasi cosa di riutilizzabile
-
+image::moving-boxes.jpg[]
 
 == Arriva Docker
 
+[%step]
+* Formato standard per scambiarsi le immagini dei container
+* Repository centralizzato con migliaia di immagini già pronte
+* Tools la creazione, gestione e avvio di container
+* API Rest per interfacciarsi con il demone docker
+* Altro?
+
 
 == Vantaggi di Docker
-[%step]
-* Provide clean, isolated development environments
-* Quickly spinning up test instances for CI purposes
-* Ensuring coherence between development and production platform
-* Altro....
 
+* Facile installare e configurare migliai di servizi e applicazioni
+* Nuovo modo di testare le proprie applicazioni e distribuirle
+* Nessuna differenza tra ambiente di produzione e sviluppo
+* Un modo standard per avviare/fermare le applicazioni
 
 == La famiglia Docker
 
-image::Eight-is-Enough.jpg[background, size=cover]
+image::Eight-is-Enough.jpg[]
 
 == La famiglia Docker ^(cont)^
 
@@ -61,11 +63,8 @@ image::Eight-is-Enough.jpg[background, size=cover]
 * Il Demone e client docker sono scritti in Go
 * il demone Docker espone una API RestFull
 
-== Demo
+== Hello World!
 
-Demo time
-
-=== Hello World!
 [source,bash]
 ----
 $ docker run busybox echo hello world
@@ -74,10 +73,10 @@ hello world
 
 == Immagini vs Container
 
-* Le immagini sono dei template read-only da cui sono avviati i container Docker
-* Ogni immagne è formata da un'insieme di livelli (layer) che utilizzano lo *Union File System*
+* Le immagini sono dei template read-only da vengono avviati i container
+* Ogni immagne è formata da un'insieme di livelli (layer)
 * Quando un'immagine viene modifica un nuovo layer viene creato
-
+* Dalla stessa immagini possono essere avviati infiniti container
 
 == Docker engine: let's start!
 
