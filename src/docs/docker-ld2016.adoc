@@ -1,13 +1,12 @@
 = Docker! Chi era costui?
-Lorenzo Luconi Trombacchi <lorenzo@reality.it>
-Cristian Lucchesi <cristian.lucchesi@gmail.com>
-2016-10-22
 :source-highlighter: highlightjs
 :backend: revealjs
 :revealjs_theme: night
 :revealjs_slideNumber: true
 
-== Docker! Chi era costui?
+Linux Day Pisa - 22/10/2016
+
+== Docker
 
 An Open Platform to Build, Ship, and Run Distributed Applications.
 
@@ -28,20 +27,18 @@ image::moving-boxes.jpg[]
 
 == Arriva Docker
 
-[%step]
 * Formato standard per scambiarsi le immagini dei container
 * Repository centralizzato con migliaia di immagini già pronte
-* Tools la creazione, gestione e avvio di container
-* API Rest per interfacciarsi con il demone docker
-* Altro?
+* Tools per la creazione e gestione dei container
+* Un modo standard per installare, avviare e fermare applicazioni/servizi
 
+== Arriva Docker ^(cont)^
 
-== Vantaggi di Docker
-
-* Facile installare e configurare migliai di servizi e applicazioni
-* Nuovo modo di testare le proprie applicazioni e distribuirle
+* Niente più formati di pacchetti differenti (deb, rpm, gem, apk....) e problemi di dipendenze
+* API RestFull per interfacciarsi con il demone docker
+* Nuovo modo di testare e distribuire le proprie applicazioni
 * Nessuna differenza tra ambiente di produzione e sviluppo
-* Un modo standard per avviare/fermare le applicazioni
+
 
 == La famiglia Docker
 
@@ -49,9 +46,9 @@ image::Eight-is-Enough.jpg[]
 
 == La famiglia Docker ^(cont)^
 
-* Docker engine
+* Docker Engine
 * Docker Hub
-* Docker Trusted Registry
+* Docker Registry
 * Docker Compose
 * Docker Machine
 * Docker Swarm
@@ -60,8 +57,8 @@ image::Eight-is-Enough.jpg[]
 
 * Docker è un'applicazione client/server
 * Il client Docker invia i comandi al demone Docker che esegue le operazioni
-* Il Demone e client docker sono scritti in Go
-* il demone Docker espone una API RestFull
+* Il demone e client docker sono scritti in Go
+* Il demone Docker espone una API RestFull
 
 == Hello World!
 
@@ -86,16 +83,9 @@ $ docker run busybox echo hello world
 hello world
 ----
 
-[NOTE.speaker]
---
-$ docker run -it ubuntu bash
 
-This is a brand new container.
-* It runs a bare-bones, no-frills ubuntu system.
-* -it is shorthand for -i -t.
-* -i tells Docker to connect us to the container's stdin.
-* -t tells Docker that we want a pseudo-terminal.
---
+== END
 
-
+Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
+Cristian Lucchesi <cristian.lucchesi@gmail.com>
 
