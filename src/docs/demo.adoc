@@ -1,0 +1,109 @@
+= Docker demo
+Lorenzo Luconi Trombacchi <lorenzo@reality.it>
+Cristian Lucchesi <cristian.lucchesi@gmail.com>
+22 ottobre 2016
+
+== Docker demo
+
+[source,bash]
+----
+$ docker version
+----
+
+----
+Client:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   23cf638
+ Built:        Thu Aug 18 05:33:38 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   23cf638
+ Built:        Thu Aug 18 05:33:38 2016
+ OS/Arch:      linux/amd64
+----
+
+
+== Hello World
+
+[source,bash]
+----
+$ docker run busybox echo hello world
+----
+
+----
+hello world
+----
+
+== Un container un più "grande"
+
+[source,bash]
+----
+$ docker run -it ubuntu bash
+----
+
+----
+root@65aa81c2de9b:/# 
+----
+
+This is a brand new container.
+
+ * It runs a bare-bones, no-frills ubuntu system.
+ * -it is shorthand for -i -t.
+ * -i tells Docker to connect us to the container's stdin.
+ * -t tells Docker that we want a pseudo-terminal.
+
+== Eseguire qualcosa nel container
+
+[source,bash]
+----
+root@65aa81c2de9b:/# figlet hello
+----
+
+----
+bash: figlet: command not found
+----
+
+Giusto, dobbiamo prima installare figlet
+
+== Installare un pacchetto
+
+[source,bash]
+----
+root@65aa81c2de9b:/# apt-get update
+----
+
+----
+...
+Fetched 24.4 MB in 1s (13.1 MB/s)                          
+Reading package lists... Done
+----
+
+[source,bash]
+----
+root@65aa81c2de9b:/# apt-get install figlet
+----
+
+----
+Reading package lists... Done
+....
+----
+
+figlet è installato!
+
+[source,bash]
+----
+root@65aa81c2de9b:/# figlet hello world
+----
+
+----
+| |__   ___| | | ___   __      _____  _ __| | __| |
+| '_ \ / _ \ | |/ _ \  \ \ /\ / / _ \| '__| |/ _` |
+| | | |  __/ | | (_) |  \ V  V / (_) | |  | | (_| |
+|_| |_|\___|_|_|\___/    \_/\_/ \___/|_|  |_|\__,_|
+----
