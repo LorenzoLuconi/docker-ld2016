@@ -107,3 +107,120 @@ root@65aa81c2de9b:/# figlet hello world
 | | | |  __/ | | (_) |  \ V  V / (_) | |  | | (_| |
 |_| |_|\___|_|_|\___/    \_/\_/ \___/|_|  |_|\__,_|
 ----
+
+== Exiting our container
+
+Just exit the shell, like you would usually do.
+
+(E.g. with ^D or exit)
+
+[source,bash]
+----
+root@04c0bb0a6c07:/# exit
+----
+
+ * Our container is now in a stopped state.
+ * It still exists on disk, but all compute resources have been freed up.
+
+== Starting another container
+
+Se avviamo un nuovo container e proviamo ad eseguire ancora figlet?
+
+[source,bash]
+----
+$ docker run -it ubuntu bash
+----
+----
+root@b13c164401fb:/# figlet
+bash: figlet: command not found
+----
+
+ * Abbiamo avviato un container completamente nuovo
+ * E' stata utilizzata l'immagine base di Ubuntu e figlet non è compreso
+ * vedremo successivamente come preparere una propria immagine contenente figlet
+
+
+== Docker ps/start/attach/--name/rm
+
+[source,bash]
+----
+$ docker ps
+$ docker ps -a
+$ docker start  ecfa855752d5 #niente terminale!
+$ docker ps
+$ docker attach ecfa855752d5
+$ docker run -it --name ubuntu ubuntu bash #poi exit
+$ docker rm -f bash
+----
+
+== Non-interactive container
+
+[source,bash]
+----
+$ docker run --name clock jpetazzo/clock #stopped all'uscita
+$ docker run --name clock -d jpetazzo/clock
+$ docker ps
+$ docker logs clock
+$ docker logs -f clock
+$ docker kill clock
+----
+
+== Immagini docker e registri
+
+[source,bash]
+----
+$ docker images
+$ docker search postgres
+$ docker search criluc
+$ docker pull debian:jessie #:latest default tag se non specificato
+----
+
+== DockerFile
+
+ * il Dockerfile è una ricetta per construire un'immagine
+ * contiene una serie di istruzioni con le quali costruire l'immagine
+ * il comando *docker build* construisce l'immagine a partire dal Dockerfile.
+
+[source,bash]
+----
+$ mkdir /var/tmp/myimage && cd /var/tmp/myimage
+$ vi Dockerfile
+----
+
+----
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install figlet
+----
+
+[source,bash]
+----
+$ docker build -t figlet .
+----
+
+== Docker port
+
+[source,bash]
+----
+$ docker run --name nginx -d -p 81:80 -p 443:443 nginx
+----
+
+----
+$ curl localhost:81
+----
+
+ * -p 80:81 informa di fare mappare la porta 80 del container docker sulla porta 80 dell'host ospitante
+  ** i Containers non hanno indirizzi IP pubblici ma solo privati
+  ** i servizi devono essere esposti porta per porta
+  ** le porte deveono essere mappate per evitare conflitti
+ 
+== Docker volume
+
+$ docker run -d -p 80:80 --name nginx -v /home/cristian/git/docker-ld2016/src/examples/:/usr/share/nginx/html nginx
+
+
+
+
+
+
+
