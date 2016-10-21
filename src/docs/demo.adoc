@@ -1,7 +1,15 @@
 = Docker demo
-Lorenzo Luconi Trombacchi <lorenzo@reality.it>
-Cristian Lucchesi <cristian.lucchesi@gmail.com>
+Lorenzo Luconi Trombacchi, Cristian Lucchesi
 22 ottobre 2016
+
+== Installazione Docker Engine
+
+Docker Engine is supported on Linux, Cloud, Windows, and macOS.
+
+Istruzioni di installazione:
+
+ * https://docs.docker.com/engine/installation/
+ 
 
 == Docker demo
 
@@ -249,7 +257,10 @@ $ curl localhost:81
  
 == Docker volume
 
-$ docker run -p 81:80 -v /home/cristian/git/docker-ld2016/src/examples/:/usr/share/nginx/html nginx
+----
+$ docker run -p 81:80 \
+  -v ${PWD}/src/examples/:/usr/share/nginx/html nginx
+----
 
 
 
