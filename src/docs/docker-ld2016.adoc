@@ -75,7 +75,7 @@ hello world
 * Quando un'immagine viene modifica un nuovo layer viene creato
 * Dalla stessa immagini possono essere avviati infiniti container
 
-== Filesystem layers
+== Docker layered filesystem
 
 image::dockerImage.png[]
 
