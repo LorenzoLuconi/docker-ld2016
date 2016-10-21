@@ -1,6 +1,6 @@
 = Docker demo
-Lorenzo Luconi Trombacchi, Cristian Lucchesi
-22 ottobre 2016
+:author: Lorenzo Luconi Trombacchi, Cristian Lucchesi
+Linux Day Pisa - 22 ottobre 2016
 
 == Installazione Docker Engine
 
