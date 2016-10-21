@@ -7,23 +7,19 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
-    classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
-    classpath 'commons-httpclient:commons-httpclient:3.1'
+    classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+    classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0'
   }
 }
 
 plugins {
-  id 'org.asciidoctor.convert' version '1.5.2'
-  id 'com.github.jruby-gradle.base' version '0.1.5'
+  id 'org.asciidoctor.convert' version '1.5.3'
+  id 'com.github.jruby-gradle.base' version '0.2.1'
 }
 
 apply plugin: 'com.github.jruby-gradle.base'
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'org.ysb33r.vfs'
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 
 ext {
   revealjsVersion = '3.2.0'
@@ -89,7 +85,6 @@ asciidoctor {
   backends    'revealjs'
 
   attributes	'build-gradle': file('build.gradle'),
-  'sourcedir': project.sourceSets.main.java.srcDirs[0],
   'endpoint-url': 'http://localhost',
   'source-highlighter' : 'highlightjs',
   'imagesdir':'./images',
