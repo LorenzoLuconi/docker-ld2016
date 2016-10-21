@@ -69,7 +69,7 @@ root@65aa81c2de9b:/# figlet hello
 bash: figlet: command not found
 ----
 
-Giusto, dobbiamo prima installare figlet
+Giusto! dobbiamo prima installare figlet
 
 == Installare un pacchetto
 
@@ -139,6 +139,10 @@ bash: figlet: command not found
  * E' stata utilizzata l'immagine base di Ubuntu e figlet non è compreso
  * vedremo successivamente come preparere una propria immagine contenente figlet
 
+[source,bash]
+----
+root@b13c164401fb:/# exit
+----
 
 == Docker ps/start/attach/--name/rm
 
@@ -157,7 +161,7 @@ $ docker rm -f bash
 
 [source,bash]
 ----
-$ docker run --name clock jpetazzo/clock #stopped all'uscita
+$ docker run --rm --name clock jpetazzo/clock #stopped all'uscita
 $ docker run --name clock -d jpetazzo/clock
 $ docker ps
 $ docker logs clock
@@ -177,9 +181,9 @@ $ docker pull debian:jessie #:latest default tag se non specificato
 
 == DockerFile
 
- * il Dockerfile è una ricetta per construire un'immagine
+ * il Dockerfile è una ricetta per costruire un'immagine
  * contiene una serie di istruzioni con le quali costruire l'immagine
- * il comando *docker build* construisce l'immagine a partire dal Dockerfile.
+ * il comando *docker build* costruisce l'immagine a partire dal Dockerfile.
 
 [source,bash]
 ----
@@ -198,11 +202,40 @@ RUN apt-get install figlet
 $ docker build -t figlet .
 ----
 
+== Dockerfile ^cont^
+
+[source,bash]
+----
+$ docker history figlet
+----
+
+[source,bash]
+----
+$ docker run -rm figlet figlet Linux Day
+----
+
+Aggiungendo un ENTRYPOINT al Dockerfile...
+----
+ENTRYPOINT["figlet"]
+----
+
+----
+$ docker build -t figlet .
+----
+
+----
+$ docker run -rm figlet Linux Day
+----
+
 == Docker port
 
 [source,bash]
 ----
 $ docker run --name nginx -d -p 81:80 -p 443:443 nginx
+----
+
+----
+$ docker ps
 ----
 
 ----
@@ -216,7 +249,7 @@ $ curl localhost:81
  
 == Docker volume
 
-$ docker run -d -p 80:80 --name nginx -v /home/cristian/git/docker-ld2016/src/examples/:/usr/share/nginx/html nginx
+$ docker run -p 81:80 -v /home/cristian/git/docker-ld2016/src/examples/:/usr/share/nginx/html nginx
 
 
 
