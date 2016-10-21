@@ -10,6 +10,8 @@ Linux Day Pisa - 22/10/2016
 
 An Open Platform to Build, Ship, and Run Distributed Applications.
 
+image::dockerLogo.png[]
+
 == C'erano una volta i container
 
 * Disponibili nei kernel moderni
@@ -68,6 +70,10 @@ $ docker run busybox echo hello world
 hello world
 ----
 
+== Demo
+
+image::demo.png[]
+
 == Immagini vs Container
 
 * Le immagini sono dei template read-only da cui vengono avviati i container
@@ -78,6 +84,10 @@ hello world
 == Docker layered filesystem
 
 image::dockerImage.png[]
+
+== Demo
+
+image::demo.png[]
 
 == Domande?
 
