@@ -263,8 +263,12 @@ $ docker run -p 81:80 \
 ----
 
 
+== Slide
 
+Queste slide sono disponibili su https://criluc.github.io/docker-ld2016/
 
+Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
+Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>
 
 
 
