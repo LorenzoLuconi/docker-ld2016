@@ -70,21 +70,19 @@ hello world
 
 == Immagini vs Container
 
-* Le immagini sono dei template read-only da vengono avviati i container
+* Le immagini sono dei template read-only da cui vengono avviati i container
 * Ogni immagne è formata da un'insieme di livelli (layer)
 * Quando un'immagine viene modifica un nuovo layer viene creato
 * Dalla stessa immagini possono essere avviati infiniti container
 
-== Docker engine: let's start!
+== Filesystem layers
 
-[source,bash]
-----
-$ docker run busybox echo hello world
-hello world
-----
+image::dockerImage.png[]
 
+== Domande?
 
-== END
+image::homer.png[]
+
 
 Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
 Cristian Lucchesi <cristian.lucchesi@gmail.com>
