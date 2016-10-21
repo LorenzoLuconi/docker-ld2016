@@ -47,7 +47,7 @@ Reading package lists... Done</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker run -it ubuntu bash</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>root@b13c164401fb:/# figlet
 bash: figlet: command not found</code></pre></div></div>
-<div class="ulist"><ul><li><p>Abbiamo avviato un container completamente nuovo</p></li><li><p>E' stata utilizzata l&#8217;immagine base di Ubuntu e figlet non è compreso</p></li><li><p>vedremo successivamente come preparere una propria immagine contenente figlet</p></li></ul></div>
+<div class="ulist"><ul><li><p>abbiamo avviato un container completamente nuovo</p></li><li><p>utilizzata l&#8217;immagine base di Ubuntu, figlet non è compreso</p></li><li><p>vedremo successivamente come preparere una propria immagine contenente figlet</p></li></ul></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">root@b13c164401fb:/# exit</code></pre></div></div></section>
 <section id="docker-ps-start-attach-name-rm"><h2>Docker ps/start/attach/--name/rm</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker ps
 $ docker ps -a
@@ -74,20 +74,20 @@ RUN apt-get update
 RUN apt-get install figlet</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker build -t figlet .</code></pre></div></div></section>
 <section id="dockerfile-sup-cont-sup"><h2>Dockerfile <sup>cont</sup></h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker history figlet</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker run -rm figlet figlet Linux Day</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker run --rm figlet figlet Linux Day</code></pre></div></div>
 <div class="paragraph"><p>Aggiungendo un ENTRYPOINT al Dockerfile&#8230;&#8203;</p></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>ENTRYPOINT["figlet"]</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>$ docker build -t figlet .</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlight"><code>$ docker run -rm figlet Linux Day</code></pre></div></div></section>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>$ docker run --rm figlet Linux Day</code></pre></div></div></section>
 <section id="docker-port"><h2>Docker port</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="bash language-bash">$ docker run --name nginx -d -p 81:80 -p 443:443 nginx</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>$ docker ps</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>$ curl localhost:81</code></pre></div></div>
-<div class="ulist"><ul><li><p>-p 80:81 informa di fare mappare la porta 80 del container docker sulla porta 80 dell&#8217;host ospitante</p><div class="ulist"><ul><li><p>i Containers non hanno indirizzi IP pubblici ma solo privati</p></li><li><p>i servizi devono essere esposti porta per porta</p></li><li><p>le porte deveono essere mappate per evitare conflitti</p></li></ul></div></li></ul></div></section>
+<div class="ulist"><ul><li><p>-p 80:81 mappa la porta 80 del container docker sulla porta 80 dell&#8217;host ospitante</p><div class="ulist"><ul><li><p>i Containers non hanno indirizzi IP pubblici ma solo privati</p></li><li><p>i servizi devono essere esposti porta per porta</p></li><li><p>le porte devono essere mappate per evitare conflitti</p></li></ul></div></li></ul></div></section>
 <section id="docker-volume"><h2>Docker volume</h2><div class="listingblock"><div class="content"><pre class="highlight"><code>$ docker run -p 81:80 \
   -v ${PWD}/src/examples/:/usr/share/nginx/html nginx</code></pre></div></div></section>
-<section id="slide"><h2>Slide</h2><div class="paragraph"><p>Queste slide sono disponibili su <a href="https://criluc.github.io/docker-ld2016/" class="bare">https://criluc.github.io/docker-ld2016/</a></p></div>
+<section id="slide"><h2>Slide</h2><div class="paragraph"><p><a href="https://criluc.github.io/docker-ld2016/" class="bare">https://criluc.github.io/docker-ld2016/</a></p></div>
 <div class="paragraph"><p>Lorenzo Luconi Trombacchi &lt;<a href="mailto:lorenzo.luconi@iit.cnr.it">lorenzo.luconi@iit.cnr.it</a>&gt;
-Cristian Lucchesi &lt;<a href="mailto:cristian.lucchesi@iit.cnr.it">cristian.lucchesi@iit.cnr.it</a>&gt;</p></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Cristian Lucchesi &lt;<a href="mailto:cristian.lucchesi@iit.cnr.it">cristian.lucchesi@iit.cnr.it</a>&gt;, @criluc</p></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
   controls: true,

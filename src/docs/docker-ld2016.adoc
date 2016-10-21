@@ -97,5 +97,5 @@ image::homer.png[]
 Slide disponibili su https://criluc.github.io/docker-ld2016/
 
 Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
-Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>
+Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>, @criluc
 

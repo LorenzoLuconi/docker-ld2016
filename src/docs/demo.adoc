@@ -143,8 +143,8 @@ root@b13c164401fb:/# figlet
 bash: figlet: command not found
 ----
 
- * Abbiamo avviato un container completamente nuovo
- * E' stata utilizzata l'immagine base di Ubuntu e figlet non è compreso
+ * abbiamo avviato un container completamente nuovo
+ * utilizzata l'immagine base di Ubuntu, figlet non è compreso
  * vedremo successivamente come preparere una propria immagine contenente figlet
 
 [source,bash]
@@ -219,7 +219,7 @@ $ docker history figlet
 
 [source,bash]
 ----
-$ docker run -rm figlet figlet Linux Day
+$ docker run --rm figlet figlet Linux Day
 ----
 
 Aggiungendo un ENTRYPOINT al Dockerfile...
@@ -232,7 +232,7 @@ $ docker build -t figlet .
 ----
 
 ----
-$ docker run -rm figlet Linux Day
+$ docker run --rm figlet Linux Day
 ----
 
 == Docker port
@@ -250,10 +250,10 @@ $ docker ps
 $ curl localhost:81
 ----
 
- * -p 80:81 informa di fare mappare la porta 80 del container docker sulla porta 80 dell'host ospitante
+ * -p 80:81 mappa la porta 80 del container docker sulla porta 80 dell'host ospitante
   ** i Containers non hanno indirizzi IP pubblici ma solo privati
   ** i servizi devono essere esposti porta per porta
-  ** le porte deveono essere mappate per evitare conflitti
+  ** le porte devono essere mappate per evitare conflitti
  
 == Docker volume
 
@@ -265,10 +265,10 @@ $ docker run -p 81:80 \
 
 == Slide
 
-Queste slide sono disponibili su https://criluc.github.io/docker-ld2016/
+https://criluc.github.io/docker-ld2016/
 
 Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
-Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>
+Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>, @criluc
 
 
 
