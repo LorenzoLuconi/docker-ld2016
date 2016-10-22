@@ -267,7 +267,7 @@ $ docker run -p 81:80 \
 
 https://criluc.github.io/docker-ld2016/
 
-Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
+Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>, @llt73
 Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>, @criluc
 
 
