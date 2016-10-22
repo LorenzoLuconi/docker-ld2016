@@ -1,3 +1,5 @@
 *~
-/build/
+/build/gems
+/build/vendor
+/build/download
 /.gradle/
