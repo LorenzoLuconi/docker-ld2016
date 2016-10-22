@@ -1,4 +1,5 @@
 = Docker! Chi era costui?
+:author: Lorenzo Luconi Trombacchi, Cristian Lucchesi
 :source-highlighter: highlightjs
 :backend: revealjs
 :revealjs_theme: night
@@ -93,7 +94,9 @@ image::demo.png[]
 
 image::homer.png[]
 
+Slide disponibili su https://criluc.github.io/docker-ld2016/
 
-Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>
-Cristian Lucchesi <cristian.lucchesi@gmail.com>
+Lorenzo Luconi Trombacchi <lorenzo.luconi@iit.cnr.it>, @llt73
+
+Cristian Lucchesi <cristian.lucchesi@iit.cnr.it>, @criluc
 
