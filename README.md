@@ -16,7 +16,7 @@ README.txt.
 
 ## Presentazione
 
-Questi contenuti sono stati presentati al seminario dal titolo *Docker! Chi era costui?* al link:http://www.linuxdaypisa.it/[Linux Day Pisa 2016].
+Questi contenuti sono stati presentati al seminario dal titolo *Docker! Chi era costui?* al [Linux Day Pisa 2016](http://www.linuxdaypisa.it/).
 
 ## Contributors
 
